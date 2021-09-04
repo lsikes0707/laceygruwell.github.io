@@ -3,7 +3,7 @@
   --main-white: #f0f0f0;
   --main-red: #ff7a91;  /*now light pink*/
   --main-blue: #008bdb;  /*new blue replaced: #45567d;*/
-  --main-gray: #303841;
+  --main-gray: #000000;   /*solid black replaced: #303841;*/
 }
 
 /* Base reset */
