@@ -307,12 +307,12 @@ img {
 
 
 
-/* Testing */
+/* OLD Testing */
 
 
 
 
-/* Projects section */
+    /* Projects section */
 
 .testing-section {
   text-align: center;
@@ -332,7 +332,7 @@ img {
   }
 }
 
-/* "Automagic" image grid using no media queries */
+/*/* "Automagic" image grid using no media queries */
 .testing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -341,7 +341,7 @@ img {
   max-width: 1280px;
   margin: 0 auto;
   margin-bottom: 6rem;
-}
+}*/
 
 @media (max-width: 30.625em) {
   .testing-section {
@@ -353,11 +353,11 @@ img {
   }
 }
 
-.testing {
+/*.testing {
   background: var(--main-gray);
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   border-radius: 2px;
-}
+}*/
 
 .code {
   color: var(--main-gray);
