@@ -1,3 +1,4 @@
-// coded by @lsikes0707
-// eslint-disable-next-line no-unused-vars
-const projectName = 'portfolio';
+// Future interactive features can be added here
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Portfolio loaded successfully!");
+});
