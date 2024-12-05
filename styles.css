@@ -222,6 +222,12 @@ ul li p {
     margin-bottom: 20px;
     text-align: center; /* Center align the headings */
 }
+.education-item {
+    margin-bottom: 20px; /* Adds space below each education item */
+    padding: 10px; /* Optional: Adds internal spacing for better layout */
+    border-bottom: 1px solid #ccc; /* Optional: Adds a subtle divider */
+}
+
 
 /* Footer */
 footer {
