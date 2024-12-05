@@ -14,6 +14,55 @@ body {
     padding: 0;
 }
 
+/* Gold shimmer effect */
+.shimmer {
+    background: linear-gradient(90deg, #f9d342, #fff, #f9d342);
+    background-size: 200% auto;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 2s linear infinite;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Gold sparkle effect for borders */
+.sparkle-border {
+    position: relative;
+    border: 2px solid #f9d342;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sparkle-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(249, 211, 66, 0.5), transparent);
+    animation: sparkle 3s linear infinite;
+}
+
+@keyframes sparkle {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
 /* Header */
 header {
     background: linear-gradient(45deg, #222, #444);
