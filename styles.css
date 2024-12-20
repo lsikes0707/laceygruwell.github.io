@@ -228,6 +228,25 @@ ul li p {
     border-bottom: 1px solid #ccc; /* Optional: Adds a subtle divider */
 }
 
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Set 3 cards per row */
+    gap: 20px;
+}
+
+@media (max-width: 900px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr); /* Adjust to 2 cards per row for smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .card-grid {
+        grid-template-columns: 1fr; /* Stack cards for narrow screens */
+    }
+}
+
+
 
 /* Footer */
 footer {
