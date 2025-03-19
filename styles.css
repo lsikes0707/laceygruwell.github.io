@@ -42,39 +42,72 @@ header nav a {
     transition: color 0.3s ease;
 }
 
+/* Shimmer Effect */
+@keyframes shimmer {
+    0% { background-position: -200px 0; }
+    100% { background-position: 200px 0; }
+}
+
+.shimmer {
+    background: linear-gradient(90deg, rgba(255,255,255,0) 25%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite linear;
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 5px;
+}
+
+.shimmer-slow {
+    animation-duration: 2.5s;
+}
+
 /* Container */
 .container {
     max-width: 1200px;
     margin: 40px auto;
     padding: 20px;
+    text-align: center;
 }
 
-/* Project Section */
+/* Sparkle Border Effect */
+@keyframes sparkle {
+    0% { box-shadow: 0 0 5px rgba(255, 223, 70, 0.5); }
+    50% { box-shadow: 0 0 15px rgba(255, 223, 70, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(255, 223, 70, 0.5); }
+}
+
+.sparkle-border {
+    border: 2px solid #f9d342;
+    animation: sparkle 2s infinite alternate;
+}
+
+/* Card Grid Layout */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
 }
 
-/* Adjust layout for different screen sizes */
+/* Responsive Layout */
 @media (min-width: 1200px) {
     .card-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 1199px) and (min-width: 768px) {
     .card-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 767px) {
     .card-grid {
-        grid-template-columns: 1fr; /* 1 card per row */
+        grid-template-columns: 1fr;
     }
 }
 
+/* Card Design */
 .card {
     background-color: white;
     border-radius: 10px;
@@ -104,4 +137,31 @@ header nav a {
 
 .card a:hover {
     color: #222;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(45deg, #222, #444);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #f9d342;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* Footer shimmer effect */
+footer .shimmer-slow {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
