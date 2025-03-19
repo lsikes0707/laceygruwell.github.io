@@ -14,7 +14,6 @@ body {
     padding: 0;
 }
 
-
 /* --- Shimmer and Sparkle Effects --- */
 .shimmer {
     background: linear-gradient(90deg, #f9d342, #fff, #f9d342);
@@ -27,7 +26,7 @@ body {
 }
 
 .shimmer-slow {
-    animation: shimmer 4s linear infinite; /* Slower for specific sections */
+    animation: shimmer 4s linear infinite;
 }
 
 @keyframes shimmer {
@@ -66,19 +65,6 @@ body {
     }
 }
 
-/* --- Navigation Shimmer Effects --- */
-.nav-link:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.nav-link:nth-child(2) {
-    animation-delay: 0.5s;
-}
-
-.nav-link:nth-child(3) {
-    animation-delay: 1s;
-}
-
 /* Header */
 header {
     background: linear-gradient(45deg, #222, #444);
@@ -88,7 +74,7 @@ header {
 }
 
 header h1 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 10px;
     letter-spacing: 2px;
@@ -134,33 +120,32 @@ h2 {
 }
 
 /* Project Section */
-/*.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}*/
 .card-grid {
     display: grid;
-    grid-template: auto / auto auto auto;
-    gap: 20px;
-}
-/*.card-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); // Set 3 cards per row
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    justify-content: center;
+    align-items: stretch;
 }
 
-@media (max-width: 900px) {
+/* Adjust layout for different screen sizes */
+@media (min-width: 1024px) {
     .card-grid {
-        grid-template-columns: repeat(2, 1fr); // Adjust to 2 cards per row for smaller screens 
+        grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1023px) {
     .card-grid {
-        grid-template-columns: 1fr; // Stack cards for narrow screens 
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row for tablets */
     }
-}*/
+}
+
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: 1fr; /* 1 card per row for mobile */
+    }
+}
 
 .card {
     background-color: white;
@@ -168,6 +153,9 @@ h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card:hover {
@@ -177,7 +165,8 @@ h2 {
 
 .card img {
     width: 100%;
-    height: auto;
+    height: 180px;
+    object-fit: cover;
 }
 
 .card h3 {
@@ -196,80 +185,44 @@ h2 {
     display: block;
     margin: 15px;
     font-size: 1rem;
-    font-weight: bold;
     color: #f9d342;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .card a:hover {
-    text-decoration: underline;
-}
-
-/* Degrees and Certificates */
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 15px 20px;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-ul li h3 {
-    font-size: 1.4rem;
-    margin-bottom: 5px;
     color: #222;
 }
 
-ul li p {
-    font-size: 1rem;
-    color: #555;
+/* Education Grid */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    justify-content: center;
 }
 
-/* Black outline using text-stroke */
-.heading {
-    font-size: 2.5rem; /* Adjust size as needed */
-    font-weight: bold;
-    color: #f9d342; /* Gold color */
-    -webkit-text-stroke: 1px black; /* Black outline for WebKit browsers */
-    text-shadow: 2px 2px 0px black, /* Fallback for broader browser support */
-                 -2px 2px 0px black,
-                 2px -2px 0px black,
-                 -2px -2px 0px black;
-    margin-bottom: 20px;
-    text-align: center; /* Center align the headings */
-}
-.education-item {
-    margin-bottom: 20px; /* Adds space below each education item */
-    padding: 10px; /* Optional: Adds internal spacing for better layout */
-    border-bottom: 1px solid #ccc; /* Optional: Adds a subtle divider */
-}
-
-
-/* Footer */
-footer {
-    background: #222;
-    color: #ccc;
+.education-grid .card {
     text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
+    padding: 20px;
 }
 
-footer p {
-    margin: 5px 0;
+/* Contact Section */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #222;
+    color: white;
 }
 
 footer a {
     color: #f9d342;
     text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
 footer a:hover {
-    color: #fff;
-    text-decoration: underline;
+    color: white;
 }
