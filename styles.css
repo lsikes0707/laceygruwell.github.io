@@ -10,8 +10,6 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
 }
 
 /* --- Shimmer and Sparkle Effects --- */
@@ -31,7 +29,7 @@ body {
 }
 
 .shimmer-slow {
-    animation: shimmer 4s linear infinite; /* Slower effect for headers */
+    animation: shimmer 4s linear infinite;
 }
 
 /* Header */
@@ -61,7 +59,6 @@ header nav a {
     text-decoration: none;
     margin: 0 15px;
     font-size: 1.1rem;
-    transition: color 0.3s ease;
 }
 
 /* Container */
@@ -84,6 +81,14 @@ header nav a {
     animation: sparkle 2s infinite alternate;
 }
 
+/* Education Grid Layout */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; /* Matching project spacing */
+    justify-content: center;
+}
+
 /* Card Grid Layout */
 .card-grid {
     display: grid;
@@ -93,19 +98,19 @@ header nav a {
 
 /* Responsive Layout */
 @media (min-width: 1200px) {
-    .card-grid {
+    .card-grid, .education-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 1199px) and (min-width: 768px) {
-    .card-grid {
+    .card-grid, .education-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 767px) {
-    .card-grid {
+    .card-grid, .education-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -116,9 +121,6 @@ header nav a {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .card img {
@@ -135,7 +137,6 @@ header nav a {
     color: #f9d342;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
 }
 
 .card a:hover {
@@ -155,16 +156,8 @@ footer a {
     color: #f9d342;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
 }
 
 footer a:hover {
     color: #fff;
-}
-
-/* Footer shimmer effect */
-footer .shimmer-slow {
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 5px;
 }
