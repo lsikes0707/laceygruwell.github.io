@@ -38,6 +38,32 @@
     <section id="projects" class="container">
         <h2 class="heading shimmer-slow">Projects</h2>
         <div class="card-grid">
+            <!-- Project 11 -->
+            <div class="card sparkle-border">
+              <div class="project-media">
+                <img src="assets/Coming Soon.png" alt="Beck For 2028 Screenshot" class="vault-img" style="width: 100%; height: 180px; object-fit: cover;">
+                <h3>Presidential Candidate Website</h3>
+                <p>Browser-based page displaying a oresidential candidate.</p>
+                <a href="BeckFor2028.html" target="_blank">Try it Live</a>
+                <a href="https://github.com/lsikes0707/" target="_blank">View on GitHub</a>
+              </div>
+            </div>
+            
+            <script>
+              const vaultImages = [
+                "assets/Coming Soon.png",
+                "assets/Coming Soon.png"
+              ];
+              let vaultIndex = 0;
+              const vaultImgTag = document.querySelector('.vault-img');
+            
+              setInterval(() => {
+                vaultIndex = (vaultIndex + 1) % vaultImages.length;
+                vaultImgTag.src = vaultImages[vaultIndex];
+              }, 3000);
+            </script>
+
+            
             <!-- Project 10 -->
             <div class="card sparkle-border">
               <div class="project-media">
