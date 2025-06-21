@@ -41,10 +41,7 @@
             <!-- Project 9 -->
             <div class="card sparkle-border">
               <div class="project-media">
-                <div class="image-cycler">
-                  <img src="assets/iosappvault1.png" alt="iOS App Vault Screenshot 1" class="vault-img" style="display: block;">
-                  <img src="assets/iosappvault2.png" alt="iOS App Vault Screenshot 2" class="vault-img" style="display: none;">
-                </div>
+                <img src="assets/iosappvault1.png" alt="iOS App Vault Screenshot" class="vault-img" style="width: 100%; height: 180px; object-fit: cover;">
                 <h3>iOS App Ideas Vault</h3>
                 <p>Browser-based app that lets you create, rate, and track iOS app ideas. No backend needed. Powered by localStorage.</p>
                 <a href="iOSappIdeaVault.html" target="_blank">Try it Live</a>
@@ -53,16 +50,19 @@
             </div>
             
             <script>
-              // Simple image cycler
+              const vaultImages = [
+                "assets/iosappvault1.png",
+                "assets/iosappvault2.png"
+              ];
+              let vaultIndex = 0;
+              const vaultImgTag = document.querySelector('.vault-img');
+            
               setInterval(() => {
-                const images = document.querySelectorAll('.vault-img');
-                images.forEach(img => img.style.display = 'none');
-                const shown = document.querySelector('.vault-img[style*=\"block\"]');
-                const next = shown.nextElementSibling || images[0];
-                shown.style.display = 'none';
-                next.style.display = 'block';
+                vaultIndex = (vaultIndex + 1) % vaultImages.length;
+                vaultImgTag.src = vaultImages[vaultIndex];
               }, 3000);
             </script>
+
 
 
             <!-- Project 1 -->
