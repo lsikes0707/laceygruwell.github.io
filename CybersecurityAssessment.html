@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cybersecurity Self-Assessment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin: 12px 0 5px;
+      font-weight: bold;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .instructions {
+      background-color: #e8f4fc;
+      border-left: 5px solid #2196F3;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Cybersecurity Self-Assessment</h1>
+    <div class="instructions">
+      <p><strong>Instructions:</strong></p>
+      <ul>
+        <li>Rate your comfort level with each domain on a scale from 1 (no comfort) to 5 (high confidence).</li>
+        <li>Indicate if you've earned the CompTIA Security+ certification.</li>
+        <li>Estimate how many hours per week you are dedicating to cybersecurity study.</li>
+        <li>After submission, your progress will appear below and be tracked over time by name.</li>
+      </ul>
+    </div>
+    <form id="assessment-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="siem">SIEM Comfort (1 = Not Comfortable, 5 = Very Comfortable):</label>
+      <input type="number" id="siem" min="1" max="5" required>
+
+      <label for="ids">IDS Comfort (1 = Not Comfortable, 5 = Very Comfortable):</label>
+      <input type="number" id="ids" min="1" max="5" required>
+
+      <label for="forensics">Forensics Comfort (1 = Not Comfortable, 5 = Very Comfortable):</label>
+      <input type="number" id="forensics" min="1" max="5" required>
+
+      <label for="mitre">MITRE ATT&CK Comfort (1 = Not Comfortable, 5 = Very Comfortable):</label>
+      <input type="number" id="mitre" min="1" max="5" required>
+
+      <label for="secplus">Security+ Certified?</label>
+      <select id="secplus">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <label for="hours">Hours of Study per Week:</label>
+      <input type="number" id="hours" min="0" required>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <h2>Progress Tracker</h2>
+    <table id="results-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>SIEM</th>
+          <th>IDS</th>
+          <th>Forensics</th>
+          <th>MITRE</th>
+          <th>Sec+</th>
+          <th>Hours</th>
+          <th>Timestamp</th>
+        </tr>
+      </thead>
+      <tbody id="results-body"></tbody>
+    </table>
+  </div>
+
+  <script>
+    const storageKey = "cybersecurity_assessments";
+
+    document.getElementById("assessment-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const data = {
+        name: document.getElementById("name").value,
+        siem: document.getElementById("siem").value,
+        ids: document.getElementById("ids").value,
+        forensics: document.getElementById("forensics").value,
+        mitre: document.getElementById("mitre").value,
+        secplus: document.getElementById("secplus").value,
+        hours: document.getElementById("hours").value,
+        timestamp: new Date().toLocaleString()
+      };
+
+      const existing = JSON.parse(localStorage.getItem(storageKey)) || [];
+      existing.push(data);
+      localStorage.setItem(storageKey, JSON.stringify(existing));
+
+      loadResults();
+      document.getElementById("assessment-form").reset();
+    });
+
+    function loadResults() {
+      const results = JSON.parse(localStorage.getItem(storageKey)) || [];
+      const body = document.getElementById("results-body");
+      body.innerHTML = "";
+      results.forEach(r => {
+        const row = `<tr>
+          <td>${r.name}</td>
+          <td>${r.siem}</td>
+          <td>${r.ids}</td>
+          <td>${r.forensics}</td>
+          <td>${r.mitre}</td>
+          <td>${r.secplus}</td>
+          <td>${r.hours}</td>
+          <td>${r.timestamp}</td>
+        </tr>`;
+        body.innerHTML += row;
+      });
+    }
+
+    loadResults();
+  </script>
+</body>
+</html>
+
