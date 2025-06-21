@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iOS App Ideas Vault</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f4f7f9;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .section {
+      background: white;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, textarea, select, button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .idea-entry {
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+      margin-top: 10px;
+    }
+    .inline-input {
+      display: inline-block;
+      width: auto;
+      margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>📱 iOS App Ideas Vault</h1>
+
+  <div class="section">
+    <h2>🌟 Rate an Existing App Idea</h2>
+    <label for="rateSelect">Choose an app idea:</label>
+    <select id="rateSelect"></select>
+    <label for="rating">Your Rating (1–5):</label>
+    <input type="number" id="rating" min="1" max="5" />
+    <button onclick="submitRating()">Submit Rating</button>
+    <div id="ratingMessage"></div>
+  </div>
+
+  <div class="section">
+    <h2>🧠 Submit a New App Idea</h2>
+    <label>App Title</label>
+    <input id="ideaTitle" />
+    <label>Target Audience</label>
+    <input id="ideaAudience" />
+    <label>Toolset (e.g., SwiftUI, SpriteKit)</label>
+    <input id="ideaTools" />
+    <label>Monetization</label>
+    <input id="ideaMonetization" />
+    <label>Description</label>
+    <textarea id="ideaDescription"></textarea>
+    <button onclick="addIdea()">Add Idea</button>
+  </div>
+
+  <div class="section">
+    <h2>📚 All Ideas</h2>
+    <div id="ideasList"></div>
+  </div>
+
+  <script>
+    const ideaKey = "ios_ideas_db";
+
+    function loadIdeas() {
+      const ideas = JSON.parse(localStorage.getItem(ideaKey)) || [];
+      const select = document.getElementById("rateSelect");
+      const list = document.getElementById("ideasList");
+      select.innerHTML = "";
+      list.innerHTML = "";
+
+      ideas.forEach((idea, index) => {
+        const opt = document.createElement("option");
+        opt.value = index;
+        opt.text = idea.title;
+        select.appendChild(opt);
+
+        const div = document.createElement("div");
+        div.className = "idea-entry";
+        div.innerHTML = `<strong>${idea.title}</strong><br>
+          Audience: ${idea.audience}<br>
+          Tools: ${idea.tools}<br>
+          Monetization: ${idea.monetization}<br>
+          Description: ${idea.description}<br>
+          ⭐ Average Rating: ${average(idea.ratings).toFixed(1)} (${idea.ratings.length} votes)
+          <br>
+          <input type='number' min='1' max='5' id='inlineRate${index}' class='inline-input' placeholder='1-5'>
+          <button onclick='rateInline(${index})'>Rate</button>
+          <button onclick='deleteIdea(${index})'>Delete</button>`;
+        list.appendChild(div);
+      });
+    }
+
+    function average(arr) {
+      if (!arr.length) return 0;
+      return arr.reduce((a, b) => a + b, 0) / arr.length;
+    }
+
+    function addIdea() {
+      const ideas = JSON.parse(localStorage.getItem(ideaKey)) || [];
+      const newIdea = {
+        title: document.getElementById("ideaTitle").value.trim(),
+        audience: document.getElementById("ideaAudience").value.trim(),
+        tools: document.getElementById("ideaTools").value.trim(),
+        monetization: document.getElementById("ideaMonetization").value.trim(),
+        description: document.getElementById("ideaDescription").value.trim(),
+        ratings: []
+      };
+      if (!newIdea.title) return alert("Title is required!");
+      ideas.push(newIdea);
+      localStorage.setItem(ideaKey, JSON.stringify(ideas));
+      loadIdeas();
+      document.getElementById("ideaTitle").value = "";
+      document.getElementById("ideaAudience").value = "";
+      document.getElementById("ideaTools").value = "";
+      document.getElementById("ideaMonetization").value = "";
+      document.getElementById("ideaDescription").value = "";
+    }
+
+    function submitRating() {
+      const index = document.getElementById("rateSelect").value;
+      const rating = parseInt(document.getElementById("rating").value);
+      if (!rating || rating < 1 || rating > 5) return alert("Please enter a rating between 1 and 5.");
+
+      const ideas = JSON.parse(localStorage.getItem(ideaKey)) || [];
+      ideas[index].ratings.push(rating);
+      localStorage.setItem(ideaKey, JSON.stringify(ideas));
+      loadIdeas();
+      document.getElementById("rating").value = "";
+      document.getElementById("ratingMessage").innerText = `Thanks for rating '${ideas[index].title}'!`;
+    }
+
+    function rateInline(index) {
+      const input = document.getElementById(`inlineRate${index}`);
+      const rating = parseInt(input.value);
+      if (!rating || rating < 1 || rating > 5) return alert("Please enter a rating between 1 and 5.");
+
+      const ideas = JSON.parse(localStorage.getItem(ideaKey)) || [];
+      ideas[index].ratings.push(rating);
+      localStorage.setItem(ideaKey, JSON.stringify(ideas));
+      loadIdeas();
+    }
+
+    function deleteIdea(index) {
+      if (!confirm("Are you sure you want to delete this idea?")) return;
+      const ideas = JSON.parse(localStorage.getItem(ideaKey)) || [];
+      ideas.splice(index, 1);
+      localStorage.setItem(ideaKey, JSON.stringify(ideas));
+      loadIdeas();
+    }
+
+    loadIdeas();
+  </script>
+</body>
+</html>
+
