@@ -40,14 +40,30 @@
         <div class="card-grid">
             <!-- Project 9 -->
             <div class="card sparkle-border">
-                <div class="project-media">
-                    <img src="assets/iosappvault.png" alt="Screenshot or icon for iOS App Ideas Vault">
-                    <h3>iOS App Ideas Vault</h3>
-                    <p>Browser-based app that lets you create, rate, and track iOS app ideas. No backend needed. Powered by localStorage.</p>
-                    <a href="iOSappIdeaVault.html" target="_blank">Try it Live</a>
-                    <a href="https://github.com/lsikes0707/ios-ideas-vault" target="_blank">View on GitHub</a>
+              <div class="project-media">
+                <div class="image-cycler">
+                  <img src="assets/iosappvault1.png" alt="iOS App Vault Screenshot 1" class="vault-img" style="display: block;">
+                  <img src="assets/iosappvault2.png" alt="iOS App Vault Screenshot 2" class="vault-img" style="display: none;">
                 </div>
+                <h3>iOS App Ideas Vault</h3>
+                <p>Browser-based app that lets you create, rate, and track iOS app ideas. No backend needed. Powered by localStorage.</p>
+                <a href="iOSappIdeaVault.html" target="_blank">Try it Live</a>
+                <a href="https://github.com/lsikes0707/ios-ideas-vault" target="_blank">View on GitHub</a>
+              </div>
             </div>
+            
+            <script>
+              // Simple image cycler
+              setInterval(() => {
+                const images = document.querySelectorAll('.vault-img');
+                images.forEach(img => img.style.display = 'none');
+                const shown = document.querySelector('.vault-img[style*=\"block\"]');
+                const next = shown.nextElementSibling || images[0];
+                shown.style.display = 'none';
+                next.style.display = 'block';
+              }, 3000);
+            </script>
+
 
             <!-- Project 1 -->
             <div class="card sparkle-border">
