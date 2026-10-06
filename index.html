@@ -281,15 +281,7 @@ section {
   margin:8px auto;
 }
 
-.unlock {
-  display:none;
-  margin:25px auto 0;
-  max-width:680px;
-}
-
-.unlock.show {
-  display:block;
-}
+.unlock { margin:25px auto 0; max-width:680px; }
 
 .sequence {
   display:flex;
@@ -319,16 +311,7 @@ section {
   font-family:ui-monospace,monospace;
 }
 
-#archive {
-  display:none;
-  text-align:left;
-  margin-top:32px;
-}
-
-#archive.open {
-  display:block;
-  animation:rise .5s ease;
-}
+#archive { text-align:left; margin-top:32px; }
 
 @keyframes rise {
   from {
@@ -409,10 +392,36 @@ footer {
     padding:48px 0;
   }
 }
+
+[hidden] { display:none !important; }
+button { font:inherit; }
+button, summary, a { -webkit-tap-highlight-color:transparent; }
+:focus-visible { outline:3px solid var(--accent2); outline-offset:5px; }
+section { scroll-margin-top:100px; }
+.skillgroups { display:grid; gap:16px; }
+.skillgroups h3 { margin-bottom:18px; }
+.project-details { margin-bottom:24px; }
+.credential { overflow-wrap:anywhere; }
+.assessment { color:var(--muted); font-size:.92rem; }
+.archive-trigger { margin:20px auto 0; cursor:pointer; font-weight:700; width:fit-content; list-style:none; }
+.archive-trigger::-webkit-details-marker { display:none; }
+.archive-trigger span[aria-hidden] { font-size:1.8rem; }
+.archive-zone #archive p { max-width:none; margin:16px 0 0; color:#d5d9e7; }
+.archive-zone #archive h2 { margin:30px 0 18px; }
+.archive-zone #archive h3 { margin-bottom:12px; }
+footer { border-top:1px solid var(--line); text-align:center; }
+.skip { position:absolute; left:16px; top:-100px; z-index:100; background:var(--text); color:var(--bg); padding:10px 16px; }
+.skip:focus { top:10px; }
+@media(max-width:720px) { .nav { align-items:flex-start; flex-direction:column; gap:10px; padding:12px 0; } .navlinks { display:flex; gap:14px; } .navlinks a { font-size:.85rem; } .archive-zone { padding:40px 0; } .card { padding:20px; } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *, *::before, *::after { animation:none !important; transition:none !important; } }
+@media print { nav,.actions,.archive-trigger,#unlock,.contactbox button { display:none; } body { background:white; color:black; } .card { background:white; border-color:#aaa; } .card p,.card ul,.meta,.skill { color:black; } #archive[hidden] { display:block !important; } }
+
 </style>
 </head>
 
 <body>
+<noscript><style>#unlock{display:none}#archive[hidden]{display:block !important}</style></noscript>
+<a class="skip" href="#main">Skip to content</a>
 
 <!-- NAVIGATION -->
 
@@ -422,6 +431,7 @@ footer {
 <a class="brand" href="#top">LG</a>
 
 <div class="navlinks">
+<a href="#about">About</a>
 <a href="#experience">Experience</a>
 <a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
@@ -431,7 +441,6 @@ footer {
 
 </div>
 </nav>
-
 
 <!-- HERO -->
 
@@ -469,7 +478,7 @@ Explore my work ↓
 class="btn"
 href="https://github.com/lsikes0707?tab=repositories"
 target="_blank"
-rel="noopener">
+rel="noopener noreferrer">
 GitHub ↗
 </a>
 
@@ -477,7 +486,7 @@ GitHub ↗
 class="btn"
 href="https://www.linkedin.com/in/laceysikes"
 target="_blank"
-rel="noopener">
+rel="noopener noreferrer">
 LinkedIn ↗
 </a>
 
@@ -485,10 +494,13 @@ LinkedIn ↗
 </div>
 </header>
 
+<main id="main">
 
-<main>
-
-
+<section id="about"><div class="wrap"><div class="sectionhead"><h2>About</h2><p>QA and engineering thinking, with curiosity about how software works and why it fails.</p></div><div class="card">
+<p>I'm a QA Automation Engineer with 4+ years of experience across software development, automation, and QA. I've spent a good amount of my time building and maintaining automated test suites, supporting release validation, and making sure software works the way it’s supposed to. I care about catching issues early, thinking through edge cases, and improving overall reliability.</p>
+<p>At Tapestry Solutions (Boeing), I built and maintained JavaScript test suites, supported deployment approval through release validation, and performed functional, regression, and exploratory testing across web applications. I worked closely with developers to identify issues early and improve system quality.</p>
+<p>I bring a mix of QA and engineering thinking: I look for bugs, investigate why they happen, and work to prevent them. Alongside my professional work, I explore software and game development.</p>
+<p>Open to remote QA Automation, SDET, Manual QA, and Software Engineering opportunities.</p></div></div></section>
 <!-- TECHNICAL EXPERIENCE -->
 
 <section id="experience">
@@ -500,169 +512,19 @@ LinkedIn ↗
 <h2>Technical Experience</h2>
 
 <p>
-The career story I want you to see first: software quality,
-development, testing, documentation, and helping people use
-technology successfully.
+Software quality, automation, development, and technical support.
 </p>
 
 </div>
-
 
 <div class="timeline">
+<article class="card"><h3>Software Application Tester</h3><div class="meta">Tapestry Solutions · Full-time · Aug 2021 – Aug 2024 · San Luis Obispo, CA</div><ul><li>Built and maintained automated test suites using JavaScript and TestComplete, supporting regression testing and release validation for production deployments.</li><li>Led test planning and execution for large-scale releases, partnering with developers and product teams to define test cases and acceptance criteria.</li><li>Developed and executed manual and automated test cases to ensure system stability and performance in regulated environments.</li><li>Managed defect tracking and reporting in Jira, documenting issues, risks, and reproduction steps to support efficient resolution.</li><li>Conducted regression and exploratory testing to uncover edge cases and performance issues.</li><li>Created JQL dashboards and reports for leadership, providing visibility into defects, trends, and release readiness.</li><li>Mentored junior testers and helped improve automation practices, test coverage, and team workflows.</li></ul></article>
+<article class="card"><h3>Quality Assurance Analyst Contractor</h3><div class="meta">The House of Staunton, Inc. · Contract · Jun 2020 – Sep 2020 · United States</div><p>Created documentation, manually checked products across platforms, and attended virtual meetings. Technologies encountered or used included Slack, Windows, Linux, iOS, Android, Jira Software, Confluence, Google Docs, and other Google documentation tools.</p></article>
+<article class="card"><h3>Jr. Software Engineer</h3><div class="meta">Private DoD Company · Full-time · May 2018 – Dec 2019 · San Luis Obispo, CA</div><ul><li>Wrote Python scripts to parse and extract information from XML files, improving data validation against security systems.</li><li>Performed system testing and validation for secure data handling in a waterfall environment.</li><li>Performed system installation, destruction, and reinstallation cycles to test software reliability and functionality before field deployment.</li><li>Built a data-parsing project from scratch in Python to streamline automation and data extraction.</li><li>Followed detailed test procedures to validate software performance on Red Hat and CentOS systems before final deployment.</li><li>Used SVN to manage source code changes and collaborated with team members remotely through Skype and Outlook.</li><li>Troubleshot software and system issues.</li></ul></article>
+<article class="card"><h3>Technology Associate Aide</h3><div class="meta">Harloe Elementary School · Freelance · May 2019 – Jun 2019 · United States</div><p>Under the guidance of the Technology Associate, worked one-on-one and in small groups with kindergarten students to support their transition to computer systems. Created documentation to help students remember how to navigate the software.</p></article>
+</div></div></section>
 
-
-<article class="card">
-
-<h3>Software Application Tester</h3>
-
-<div class="meta">
-Tapestry Solutions · Aug 2021 – Aug 2024
-</div>
-
-<ul>
-
-<li>
-Built and maintained automated test suites using JavaScript and
-TestComplete for regression testing and release validation.
-</li>
-
-<li>
-Led test planning and execution for large releases, partnering
-with developers and product teams on test cases and acceptance criteria.
-</li>
-
-<li>
-Developed and executed manual and automated tests; documented
-defects, risks, and reproduction steps in Jira.
-</li>
-
-<li>
-Used JQL dashboards and reports to surface defect trends and
-release readiness; mentored junior testers and contributed to
-stronger team workflows.
-</li>
-
-</ul>
-
-</article>
-
-
-<article class="card">
-
-<h3>Quality Assurance Analyst Contractor</h3>
-
-<div class="meta">
-The House of Staunton, Inc. · Jun 2020 – Sep 2020
-</div>
-
-<p>
-Created documentation, manually checked product across platforms,
-and collaborated remotely using tools including Slack, Jira,
-Windows, Linux, iOS, Android, Confluence, and Google productivity tools.
-</p>
-
-</article>
-
-
-<article class="card">
-
-<h3>Jr. Software Engineer</h3>
-
-<div class="meta">
-Private DoD Company · May 2018 – Dec 2019
-</div>
-
-<ul>
-
-<li>
-Wrote Python scripts to parse and extract information from XML files
-and support data validation.
-</li>
-
-<li>
-Performed system testing, installation/reinstallation cycles,
-debugging, and validation in a waterfall environment.
-</li>
-
-<li>
-Worked with Red Hat/CentOS systems and SVN while troubleshooting
-software and system issues.
-</li>
-
-</ul>
-
-</article>
-
-
-<article class="card">
-
-<h3>Technology Associate Aide</h3>
-
-<div class="meta">
-Harloe Elementary School · May 2019 – Jun 2019
-</div>
-
-<p>
-Supported kindergarten students one-on-one and in small groups as
-they transitioned to computer systems, while creating supporting
-documentation.
-</p>
-
-</article>
-
-
-</div>
-</div>
-</section>
-
-
-<!-- TECHNICAL SKILLS -->
-
-<section id="skills">
-
-<div class="wrap">
-
-<div class="sectionhead">
-
-<h2>Technical Skills</h2>
-
-<p>
-A practical mix of professional QA tools and technologies used
-through work, education, and personal development.
-</p>
-
-</div>
-
-
-<div class="skills">
-
-<span class="skill">Manual Testing</span>
-<span class="skill">Regression Testing</span>
-<span class="skill">Exploratory Testing</span>
-<span class="skill">Test Planning</span>
-<span class="skill">Defect Management</span>
-<span class="skill">Jira / JQL</span>
-<span class="skill">TestComplete</span>
-<span class="skill">TestExecute</span>
-<span class="skill">Jenkins</span>
-<span class="skill">JavaScript</span>
-<span class="skill">Python</span>
-<span class="skill">C++</span>
-<span class="skill">SQL</span>
-<span class="skill">XML</span>
-<span class="skill">Linux</span>
-<span class="skill">Windows</span>
-<span class="skill">SVN</span>
-<span class="skill">Git / GitHub</span>
-<span class="skill">Unreal Engine</span>
-<span class="skill">Software Development</span>
-<span class="skill">Agile & Waterfall</span>
-
-</div>
-</div>
-</section>
-
-
+<section id="skills"><div class="wrap"><div class="sectionhead"><h2>Technical Skills</h2><p>Skills developed through professional work, coursework, and independent projects.</p></div><div class="skillgroups"><div class="card"><h3>Testing & quality</h3><div class="skills"><span class="skill">Software Testing</span><span class="skill">Software Quality</span><span class="skill">Manual Testing</span><span class="skill">Regression Testing</span><span class="skill">Exploratory Testing</span><span class="skill">Functional Testing</span><span class="skill">Automation</span><span class="skill">Test Planning</span><span class="skill">Test Cases</span><span class="skill">Testing Tools</span><span class="skill">Performance Testing</span><span class="skill">Root Cause</span><span class="skill">Defect Management</span><span class="skill">Risk Analysis</span><span class="skill">TestComplete</span><span class="skill">TestExecute</span><span class="skill">Jenkins</span></div></div><div class="card"><h3>Programming & web</h3><div class="skills"><span class="skill">Software Development</span><span class="skill">Programming</span><span class="skill">Python (Programming Language)</span><span class="skill">JavaScript</span><span class="skill">Java</span><span class="skill">C++</span><span class="skill">C#</span><span class="skill">Swift (Programming Language)</span><span class="skill">PHP</span><span class="skill">React.js</span><span class="skill">HTML</span><span class="skill">Cascading Style Sheets (CSS)</span><span class="skill">Ruby</span><span class="skill">Ruby on Rails</span><span class="skill">Shell Scripting</span><span class="skill">Bash</span><span class="skill">SQL</span><span class="skill">MySQL</span><span class="skill">XML</span><span class="skill">Databases</span><span class="skill">Web Design</span><span class="skill">iOS Development</span><span class="skill">Pair Programming</span></div></div><div class="card"><h3>Tools & platforms</h3><div class="skills"><span class="skill">GitHub</span><span class="skill">Git</span><span class="skill">SVN</span><span class="skill">Jira</span><span class="skill">JQL</span><span class="skill">Confluence</span><span class="skill">Xcode</span><span class="skill">Heroku</span><span class="skill">Linux</span><span class="skill">Red Hat</span><span class="skill">CentOS</span><span class="skill">Windows</span><span class="skill">Windows XP</span><span class="skill">Windows 7</span><span class="skill">Windows 10</span><span class="skill">Android</span><span class="skill">iOS</span><span class="skill">Slack</span><span class="skill">Google Docs</span><span class="skill">Microsoft Office</span><span class="skill">Microsoft Word</span><span class="skill">Microsoft Excel</span><span class="skill">PowerPoint</span></div></div><div class="card"><h3>Games & design</h3><div class="skills"><span class="skill">Unreal Engine</span><span class="skill">Blueprints</span><span class="skill">Blender</span><span class="skill">Unity</span><span class="skill">Game Development</span><span class="skill">Multimedia Design</span></div></div><div class="card"><h3>Delivery & technical support</h3><div class="skills"><span class="skill">Agile Methodologies</span><span class="skill">Agile &amp; Waterfall Methodologies</span><span class="skill">Technical Support</span><span class="skill">Communication</span><span class="skill">Interpersonal Skills</span><span class="skill">Teamwork</span><span class="skill">Collaboration</span><span class="skill">Leadership</span><span class="skill">Time Management</span><span class="skill">Critical Thinking</span><span class="skill">Growth Mindset</span><span class="skill">Customer Obsession</span><span class="skill">Diversity &amp; Inclusion</span><span class="skill">Data Analysis</span><span class="skill">Data Entry</span></div></div></div><p class="assessment">LinkedIn skill assessments passed: Python, JavaScript, Ruby on Rails, CSS, Microsoft Word, and PowerPoint.</p></div></section>
 <!-- PROJECTS -->
 
 <section id="projects">
@@ -674,20 +536,17 @@ through work, education, and personal development.
 <h2>Explore More</h2>
 
 <p>
-My projects are more comprehensive on GitHub, so this profile points
-to the places where you can actually see the work.
+Software, game development, and creative experiments—from coursework to independent projects.
 </p>
 
 </div>
 
-
-<div class="two project-links">
-
+<div class="two project-details"><article class="card"><h3>Unreal Engine 5 Maze</h3><div class="meta">Aug 2024 – Present · Unreal Engine · Blueprints</div><p>A basic third-person maze implemented with Blueprints.</p><a class="btn" href="https://github.com/lsikes0707/Maze-UE-Game-Development" target="_blank" rel="noopener noreferrer">View repository ↗</a></article><article class="card"><h3>Blender Projects</h3><div class="meta">Blender · 3D assets</div><p>A plate of donuts and a rudimentary, Minecraft-inspired set of crumbling towers. A collection of experiments in modeling and asset creation.</p><a class="btn" href="https://github.com/lsikes0707?tab=repositories" target="_blank" rel="noopener noreferrer">Explore repositories ↗</a></article></div><div class="two project-links">
 
 <a
 href="https://github.com/lsikes0707?tab=repositories"
 target="_blank"
-rel="noopener">
+rel="noopener noreferrer">
 
 <article class="card">
 
@@ -702,7 +561,6 @@ Software, QA, web, coursework, and game-development repositories.
 </article>
 
 </a>
-
 
 <a href="gamedev.html">
 
@@ -720,11 +578,10 @@ My dedicated game-development work and playable experiments.
 
 </a>
 
-
 <a
 href="https://laceysikes.weebly.com/"
 target="_blank"
-rel="noopener">
+rel="noopener noreferrer">
 
 <article class="card">
 
@@ -741,11 +598,10 @@ and early projects.
 
 </a>
 
-
 <a
 href="https://www.youtube.com/@LaceyLC"
 target="_blank"
-rel="noopener">
+rel="noopener noreferrer">
 
 <article class="card">
 
@@ -761,254 +617,23 @@ Video demonstrations and project clips.
 
 </a>
 
-
 </div>
 </div>
 </section>
 
-
-<!-- EDUCATION -->
-
-<section id="education">
-
-<div class="wrap">
-
-<div class="sectionhead">
-
-<h2>Education & Certification</h2>
-
-<p>
-Formal computer-science education backed by a current
-software-testing credential.
-</p>
-
-</div>
-
-
-<div class="two">
-
-
-<div class="card edu">
-
-<strong>
-B.S. Computer Science
-</strong>
-
-<span>
-California State University, Monterey Bay · 2019
-</span>
-
-</div>
-
-
-<div class="card edu">
-
-<strong>
-A.A. Liberal Arts — Math & Science
-</strong>
-
-<span>
-Cuesta College · 2015
-</span>
-
-</div>
-
-
-<div class="card edu">
-
-<strong>
-ISTQB Certified Tester Foundation Level (CTFL)
-</strong>
-
-<span>
-ISTQB / ASTQB · July 2025
-</span>
-
-</div>
-
-
-</div>
-</div>
-</section>
-
-
-<!-- HIDDEN CAREER ARCHIVE -->
-
-<section>
-
-<div class="wrap">
-
-<div class="archive-zone">
-
-
-<button
-class="chest"
-id="chest"
-aria-label="Open hidden experience archive">
-🗃️
-</button>
-
-
-<div class="eyebrow">
-Experience Archive · Locked
-</div>
-
-
-<h3>
-There’s more to a career than the résumé headline.
-</h3>
-
-
-<p>
-My technical work is only part of the story.
-Curious? Unlock the archive.
-Hint: it’s also how I approach unfamiliar problems.
-</p>
-
-
-<div class="unlock" id="unlock">
-
-
-<div class="sequence">
-
-<button class="seq" data-step="1">
-LEARN
-</button>
-
-<button class="seq" data-step="0">
-TEST
-</button>
-
-<button class="seq" data-step="2">
-BUILD
-</button>
-
-</div>
-
-
-<div class="status" id="status">
-Sequence: _ → _ → _
-</div>
-
-
-</div>
-
-
-<!-- HIDDEN CONTENT -->
-
-<div id="archive">
-
-
-<div class="unlocked">
-✓ Achievement unlocked: There was more before tech
-</div>
-
-
-<div class="two" style="margin-top:18px">
-
-
-<article class="card">
-
-<h3>Research Assistant</h3>
-
-<div class="meta">
-Cal Poly Corporation · Jun 2017 – May 2018
-</div>
-
-<p>
-Collected raw data, transcribed research data into detailed
-spreadsheets, and collaborated with a research team.
-
-Built habits around accuracy, documentation, repeatable processes,
-and careful handling of information.
-</p>
-
-</article>
-
-
-<article class="card">
-
-<h3>Swim Instruction</h3>
-
-<div class="meta">
-Teaching • Safety • Adaptability
-</div>
-
-<p>
-Experience teaching skills clearly, adjusting instruction to the
-learner, maintaining safety awareness, and building confidence
-through patient, practical coaching.
-</p>
-
-</article>
-
-
-<article class="card">
-
-<h3>Miner's Ace Hardware</h3>
-
-<div class="meta">
-Customer Service • Retail Operations • Problem Solving
-</div>
-
-<p>
-Customer-facing experience requiring communication, product
-learning, practical problem solving, reliability, and the ability
-to help people find workable solutions.
-</p>
-
-</article>
-
-
-<article class="card">
-
-<h3>
-The skills underneath the titles
-</h3>
-
-
-<div class="skills">
-
-<span class="skill">Research</span>
-<span class="skill">Data Accuracy</span>
-<span class="skill">Documentation</span>
-<span class="skill">Teaching</span>
-<span class="skill">Safety Awareness</span>
-<span class="skill">Customer Service</span>
-<span class="skill">Communication</span>
-<span class="skill">Adaptability</span>
-<span class="skill">Teamwork</span>
-<span class="skill">Problem Solving</span>
-
-</div>
-
-</article>
-
-
-</div>
-
-
-<p class="note">
-This archive is intentionally separate from the primary technical
-profile: additional experience, not filler.
-</p>
-
-
-</div>
-</div>
-</div>
-</section>
-
-
+<section id="education"><div class="wrap"><div class="sectionhead"><h2>Education & Certifications</h2><p>A foundation in computer science and scientific reasoning, with credentials in testing and technical support.</p></div><div class="two"><article class="card"><h3>B.S. Computer Science</h3><div class="meta">California State University, Monterey Bay · 2017 – 2019</div><p>Completed a remote Computer Science program covering software development, algorithms, data structures, and system design.</p><ul><li>Coursework and projects in full-stack development, software testing, automation, and performance optimization.</li><li>Programming experience with Python, Java, Swift, and C++.</li><li>Studied databases, multimedia design, and DevOps practices.</li><li>Collaborated on team projects using Agile methodologies, Git, and cross-functional communication.</li></ul></article><article class="card"><h3>A.A. Liberal Arts — Math & Science</h3><div class="meta">Cuesta College · 2012 – 2015</div><p>Built an interdisciplinary foundation in mathematics, physics, and scientific reasoning.</p><ul><li>Strengthened quantitative reasoning and logical problem-solving through mathematics and physical sciences.</li><li>Studied scientific methodologies, data analysis, and critical thinking.</li><li>Developed analytical thinking, adaptability, and a foundation for learning new technologies.</li></ul></article><article class="card"><h3>ISTQB Certified Tester Foundation Level (CTFL)</h3><div class="meta">American Software Testing Qualifications Board (ASTQB) · Issued Jul 2025</div><p class="credential">Credential ID: 25-CTFL-01814-USA</p><div class="skills"><span class="skill">Software Testing</span><span class="skill">Test Planning</span><span class="skill">Manual Testing</span><span class="skill">Automation</span></div></article><article class="card"><h3>Technical Support Fundamentals</h3><div class="meta">Coursera | Google · Issued Mar 2021</div><p class="credential">Credential ID: GF9ZXZLXBTVS</p><a class="btn" href="https://www.coursera.org/account/accomplishments/verify/GF9ZXZLXBTVS" target="_blank" rel="noopener noreferrer">View credential ↗</a></article></div></div></section>
+<section id="experience-archive"><div class="wrap"><div class="archive-zone">
+<div class="eyebrow" id="archive-label">Experience Archive · Locked</div><h2>A little more to discover.</h2><p>Find the key to the chapters before software.</p>
+<details id="archive-door"><summary class="btn archive-trigger"><span aria-hidden="true">🗃️</span> <span id="archive-button-label">Unlock archive</span></summary>
+<div id="unlock" class="unlock"><p>Test an idea. Learn from the result. Build what comes next.</p><div class="sequence"><button type="button" class="seq" data-step="1">LEARN</button><button type="button" class="seq" data-step="2">BUILD</button><button type="button" class="seq" data-step="0">TEST</button></div><p class="status" id="status" role="status" aria-live="polite">Sequence: _ → _ → _</p></div>
+<div id="archive" hidden tabindex="-1"><div class="unlocked">✓ Achievement unlocked: The earlier chapters</div><h2>Additional Experience</h2><div class="timeline"><article class="card"><h3>Research Assistant</h3><div class="meta">Cal Poly Corporation · Part-time · Jun 2017 – May 2018 · San Luis Obispo County, CA</div><p>Collected raw data, transcribed it into detailed spreadsheets, and collaborated with the research team.</p></article><article class="card"><h3>Clinical Laboratory Processor</h3><div class="meta">Central Coast Pathology Laboratory · Part-time · Sep 2013 – Nov 2014 · San Luis Obispo County, CA</div><p>Handled patient specimens daily, adhered to strict health protocols, and answered and directed patient phone calls.</p></article><article class="card"><h3>Volunteer</h3><div class="meta">French Hospital Medical Center · Jan 2011 – Jan 2012 · San Luis Obispo, CA</div><p>Transported patients with care and provided entertainment and support.</p></article><article class="card"><h3>Inventory Analyst, Sales Associate, Cashier</h3><div class="meta">Miner’s Ace Hardware · Part-time · May 2010 – Nov 2011</div><p>Helped customers, managed inventory and inventory discrepancies, entered data, and answered phones.</p></article><article class="card"><h3>Sales Associate, Cashier</h3><div class="meta">Orchard Supply Hardware · Jun 2009 – Apr 2010 · Pismo Beach, CA</div></article><article class="card"><h3>Activities Assistant</h3><div class="meta">Wyndham Residence · 2008 · Arroyo Grande, CA</div></article><article class="card"><h3>Swim Instructor</h3><div class="meta">Five Cities Swim Club · 2006 · Arroyo Grande, CA</div></article></div><h2>Additional Skills</h2><div class="skillgroups"><div class="card"><h3>Laboratory & research</h3><div class="skills"><span class="skill">Research</span><span class="skill">Attention to Detail</span><span class="skill">Quality Control and Assurance</span><span class="skill">U.S. Health Insurance Portability and Accountability Act (HIPAA)</span><span class="skill">Specimen Handling and Processing</span><span class="skill">Laboratory Safety and Compliance</span><span class="skill">Laboratory Skills</span></div></div><div class="card"><h3>Care & instruction</h3><div class="skills"><span class="skill">Patient Care and Support</span><span class="skill">Hospital Operations</span><span class="skill">Emotional Intelligence and Compassion</span><span class="skill">Teamwork and Adaptability</span><span class="skill">Activity Coordination &amp; Engagement</span><span class="skill">Elderly Care &amp; Companionship</span><span class="skill">Meal Preparation &amp; Service</span><span class="skill">Patience</span><span class="skill">Empathy</span><span class="skill">Child &amp; Youth Coaching</span><span class="skill">Swim Instruction &amp; Stroke Development</span><span class="skill">Water Safety</span><span class="skill">Communication &amp; Adaptability</span><span class="skill">Leadership &amp; Teamwork</span></div></div><div class="card"><h3>Retail & operations</h3><div class="skills"><span class="skill">Inventory Management</span><span class="skill">Inventory Management &amp; Stock Control</span><span class="skill">Product Knowledge &amp; Sales Expertise</span><span class="skill">Horticultural Knowledge &amp; Plant Care</span><span class="skill">Customer Service</span><span class="skill">Relationship Building</span><span class="skill">Merchandising &amp; Store Organization</span><span class="skill">Live Product Care</span><span class="skill">Customer Service &amp; Sales</span><span class="skill">Cash Handling</span><span class="skill">Merchandising</span></div></div></div></div></details></div></div></section>
 <!-- CONTACT -->
 
 <section id="contact">
 
 <div class="wrap">
 
-
 <div class="contactbox">
-
 
 <div>
 
@@ -1023,13 +648,9 @@ margin:.1em 0;
 Want to talk?
 </h2>
 
-<p style="color:var(--muted)">
-The email address is assembled only when you click, so it isn't
-printed in the page source as one obvious address.
-</p>
+<p style="color:var(--muted)">Let’s connect about software quality, development, or a new opportunity.</p>
 
 </div>
-
 
 <button
 class="btn primary"
@@ -1038,30 +659,25 @@ style="cursor:pointer;font-size:1rem">
 Email me ↗
 </button>
 
-
 </div>
 
-
 <div class="linkgrid">
-
 
 <a
 class="btn"
 href="https://www.linkedin.com/in/laceysikes"
 target="_blank"
-rel="noopener">
+rel="noopener noreferrer">
 LinkedIn
 </a>
-
 
 <a
 class="btn"
 href="https://github.com/lsikes0707?tab=repositories"
 target="_blank"
-rel="noopener">
+rel="noopener noreferrer">
 GitHub
 </a>
-
 
 <a
 class="btn"
@@ -1069,33 +685,28 @@ href="gamedev.html">
 GameDev
 </a>
 
-
 <a
 class="btn"
 href="https://laceysikes.weebly.com/"
 target="_blank"
-rel="noopener">
+rel="noopener noreferrer">
 CSUMB Archive
 </a>
-
 
 <a
 class="btn"
 href="https://www.youtube.com/@LaceyLC"
 target="_blank"
-rel="noopener">
+rel="noopener noreferrer">
 YouTube
 </a>
-
 
 </div>
 
 </div>
 </section>
 
-
 </main>
-
 
 <!-- FOOTER -->
 
@@ -1104,143 +715,52 @@ YouTube
 <div class="wrap">
 
 © <span id="year"></span>
-Lacey Gruwell · Built as a personal profile, not a social feed.
+All rights reserved.
 
 </div>
 
 </footer>
 
-
 <script>
-
-/* CURRENT YEAR */
-
-document.getElementById('year').textContent =
-  new Date().getFullYear();
-
-
-/* EXPERIENCE ARCHIVE */
-
-const chest =
-  document.getElementById('chest');
-
-const unlock =
-  document.getElementById('unlock');
-
-const status =
-  document.getElementById('status');
-
-const archive =
-  document.getElementById('archive');
-
-
-chest.addEventListener('click', () => {
-
-  unlock.classList.toggle('show');
-
-});
-
-
-let progress = 0;
-
-const wanted = [0,1,2];
-
-const words = [
-  'TEST',
-  'LEARN',
-  'BUILD'
-];
-
-
-document
-.querySelectorAll('.seq')
-.forEach(button => {
-
-  button.addEventListener('click', () => {
-
-    const step =
-      Number(button.dataset.step);
-
-
-    if (step === wanted[progress]) {
-
-      progress++;
-
-
-      status.textContent =
-        'Sequence: ' +
-        words
-          .slice(0,progress)
-          .join(' → ') +
-
-        (
-          progress < 3
-          ? ' → _'.repeat(3-progress)
-          : ' ✓'
-        );
-
-
-      if (progress === 3) {
-
-        archive.classList.add('open');
-
-        unlock.style.display = 'none';
-
-        chest.textContent = '📂';
-
-
-        archive.scrollIntoView({
-          behavior:'smooth',
-          block:'center'
-        });
-
+(() => {
+  'use strict';
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const door = document.getElementById('archive-door');
+  const puzzle = document.getElementById('unlock');
+  const archive = document.getElementById('archive');
+  const status = document.getElementById('status');
+  const words = ['TEST', 'LEARN', 'BUILD'];
+  let progress = 0;
+  let unlocked = false;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.seq').forEach(button => {
+    button.addEventListener('click', () => {
+      if (unlocked) return;
+      const step = Number(button.dataset.step);
+      if (step !== progress) {
+        progress = step === 0 ? 1 : 0;
+        status.textContent = progress ? 'Sequence: TEST → _ → _' : 'Try again: TEST an idea, LEARN from it, then BUILD.';
+        return;
       }
-
-    }
-
-    else {
-
-      progress = 0;
-
-      status.textContent =
-        'Not quite. Think like QA: what comes before you learn from the result and build the next thing?';
-
-    }
-
+      progress += 1;
+      status.textContent = 'Sequence: ' + words.slice(0, progress).join(' → ') + ' → _'.repeat(3 - progress);
+      if (progress === 3) {
+        unlocked = true;
+        puzzle.hidden = true;
+        archive.hidden = false;
+        document.getElementById('archive-label').textContent = 'Experience Archive · Unlocked';
+        document.getElementById('archive-button-label').textContent = 'Open / close archive';
+        archive.focus({preventScroll:true});
+        archive.scrollIntoView({behavior:reducedMotion ? 'auto' : 'smooth', block:'start'});
+      }
+    });
   });
-
-});
-
-
-/* EMAIL BUTTON
-
-The complete email address isn't written as one string
-in the HTML.
-
-*/
-
-document
-.getElementById('emailBtn')
-.addEventListener('click', () => {
-
-  const user =
-    ['lacey','gruwell'].join('');
-
-  const domain =
-    ['icloud','com'].join('.');
-
-
-  window.location.href =
-    'mai' +
-    'lto:' +
-    user +
-    '@' +
-    domain +
-    '?subject=' +
-    encodeURIComponent('Portfolio inquiry');
-
-});
-
+  document.getElementById('emailBtn').addEventListener('click', () => {
+    const user = ['lacey', 'gruwell'].join('');
+    const domain = ['icloud', 'com'].join('.');
+    window.location.href = 'mailto:' + user + '@' + domain + '?subject=' + encodeURIComponent('Portfolio inquiry');
+  });
+})();
 </script>
 
 </body>
