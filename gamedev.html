@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lacey's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="shimmer">Lacey Gruwell</h1>
+        <p>Software | Games | Quality | Development | Design</p>
+        <nav>
+            <a href="#education" class="nav-link shimmer">Education</a>
+            <a href="#projects" class="nav-link shimmer">Projects</a>
+            <a href="#contact" class="nav-link shimmer">Contact</a>
+        </nav>
+    </header>
+
+    <section id="education" class="container">
+        <h2 class="heading shimmer-slow">Education</h2>
+        <div class="education-grid">
+            <div class="card sparkle-border">
+                <h3>Bachelor's Degree, Computer Science</h3>
+                <p>California State University, Monterey Bay - 2019</p>
+            </div>
+            <div class="card sparkle-border">
+                <h3>Associate's Degree, Liberal Arts, Math and Sciences</h3>
+                <p>Cuesta College, San Luis Obispo - 2015</p>
+            </div>
+            <div class="card sparkle-border">
+                <h3><a href="https://atsqa.org/certified-testers/profile/ee1a4f626822422ba28c1a75ab71f209" target="_blank">Certified Tester Foundation Level (CTFL) Certificate</a></h3>
+                <p>ISTQB, ASTQB - July 2025</p>
+            </div>
+            <!-- <div class="card sparkle-border">
+                <h3>Game Design Certificate</h3>
+                <p>Epic Games, Coursera - Coming Soon!</p>
+            </div>
+            <div class="card sparkle-border">
+                <h3>iOS Developer Certificate</h3>
+                <p>Meta, Coursera - Coming Soon!</p>
+            </div>
+            <div class="card sparkle-border">
+                <h3>Security+ Certificate</h3>
+                <p>Comptia - Coming Soon!</p>
+            </div> -->
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h2 class="heading shimmer-slow">Projects</h2>
+        <div class="card-grid">
+            <!-- Project 11 -->
+            <!--  Removing Project 11 testing resources
+            <div class="card sparkle-border">
+                <div class="project-media">
+                    <img src="assets/TestingResources.png" alt="Image of Testing Resources Repo.">
+                    <h3>Testing Resources</h3>
+                    <p>A simple collection of templates in manual and automated testing (Selenium derived), including defect/bug templates for writing up bugs.</p>
+                    <a href="https://github.com/lsikes0707/Testing-Resources" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+            -->
+            
+            <!-- Project 10 -->
+            <!--  Removing Project 10 Cybersecurity project
+            <div class="card sparkle-border">
+              <div class="project-media">
+                <img src="assets/cybervault1.png" alt="Cybersecurity Tool Screenshot" class="cyber-img" style="width: 100%; height: 180px; object-fit: cover;">
+                <h3>Cybersecurity Self-Assessment Tool</h3>
+                <p>Track your progress across SIEM, IDS, MITRE ATT&CK, and more. Great for prepping for Security+ — stores progress locally, no login needed!</p>
+                <a href="CybersecurityAssessment.html" target="_blank">Try it Live</a>
+                <a href="https://github.com/lsikes0707/Cybersecurity-Self-Assessment" target="_blank">View on GitHub</a>
+              </div>
+            </div>
+            -->
+            
+            <script>
+              const cyberImages = [
+                "assets/cybervault1.png",
+                "assets/cybervault2.png"
+              ];
+              let cyberIndex = 0;
+              const cyberImgTag = document.querySelector('.cyber-img');
+            
+              setInterval(() => {
+                cyberIndex = (cyberIndex + 1) % cyberImages.length;
+                cyberImgTag.src = cyberImages[cyberIndex];
+              }, 3000);
+            </script>
+            
+            
+
+            <!-- Project 8 -->
+            <div class="card sparkle-border">
+                <div class="project-media">
+                    <img src="assets/Coming Soon.png" alt="Image of Dungeon Escape Game made with Unreal Engine.">
+                    <h3>Dungeon Escape - In progress</h3>
+                    <p>Developed in Unreal Engine and Visual Studio Code with guidance from GameDev.tv.</p>
+                    <a href="https://github.com/lsikes0707/DungeonEscape" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+            
+            <!-- Project 7 -->
+            <div class="card sparkle-border">
+                <div class="project-media">
+                    <img src="assets/ObstacleAssaultImage.png" alt="Image of Obstacle Assault Game made with Unreal Engine.">
+                    <h3>Obstacle Assault</h3>
+                    <p>Developed in Unreal Engine and Visual Studio Code with guidance from GameDev.tv. I chose the assets and added music and a celebration at the end for the players who succeed. </p>
+                    <a href="https://studio.youtube.com/video/5yPz2f2SHuw/edit" target="_blank">Watch on YouTube</a>
+                    <a href="https://github.com/lsikes0707/ObstacleAssault56" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+            
+            <!-- Project 1 -->
+            <div class="card sparkle-border">
+                <div class="project-media">
+                    <img src="assets/Axe Game.png" alt="Image of Axe Game made with C++">
+                    <h3>Axe Game</h3>
+                    <p>Developed with C++ and Visual Studio Code with guidance from GameDev.tv.</p>
+                    <a href="https://github.com/lsikes0707/cplusplus-only-games?tab=readme-ov-file#axe-game-video" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="card sparkle-border">
+                <div class="project-media">
+                    <img src="assets/Dapper Dasher Game.png" alt="Image of Dapper Dasher Game made with C++">
+                    <h3>Dapper Dasher Game</h3>
+                    <p>Developed with C++ and Visual Studio Code with guidance from GameDev.tv.</p>
+                    <a href="https://github.com/lsikes0707/cplusplus-only-games?tab=readme-ov-file#axe-game-video" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="card sparkle-border">
+                <div class="project-media">
+                    <img src="assets/WarehouseWreckage423.png" alt="Image of Warehouse Wreckage Game made with Unreal Engine.">
+                    <h3>Warehouse Wreckage</h3>
+                    <p>Developed in Unreal Engine and Visual Studio Code with guidance from GameDev.tv.</p>
+                    <a href="https://github.com/lsikes0707/WarehouseWreckage423/tree/main" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+            <!-- Project 4 -->
+            <div class="card sparkle-border">
+                <div class="project-media">
+                    <img src="assets/EpicQAQuest.png" alt="Image of Epic QA Quest Game made with Unreal Engine.">
+                    <h3>Epic QA Quest</h3>
+                    <p>Developed in Unreal Engine, inspired by Quality Assurance.</p>
+                    <a href="https://github.com/lsikes0707/EpicQAQuest" target="_blank">View on GitHub</a>
+                    <a href="https://www.youtube.com/watch?v=8UvY3UelmOg" target="_blank">Watch on YouTube</a>
+                </div>
+            </div>
+            <!-- Project 5 -->
+            <div class="card sparkle-border">
+                <div class="project-media">
+                    <img src="assets/MyFirstMaze.png" alt="Image of My First Maze made with Unreal Engine.">
+                    <h3>An A-Mazing First Attempt at a Maze</h3>
+                    <p>Developed in Unreal Engine, working with blueprints.</p>
+                    <a href="https://github.com/lsikes0707/Maze-UE-Game-Development" target="_blank">View on GitHub</a>
+                    <a href="https://youtu.be/L1UtSy9G8Ik" target="_blank">Watch on YouTube</a>
+                </div>
+            </div>
+            <!-- Project 6 -->
+            <div class="card sparkle-border">
+                <div class="project-media">
+                    <img src="assets/LaceysPlayground.png" alt="Image of my playground made with Unreal Engine.">
+                    <h3>My Playground</h3>
+                    <p>Developed in Unreal Engine.</p>
+                    <a href="https://github.com/lsikes0707/Lacey-s-Playground" target="_blank">View on GitHub</a>
+                    <a href="https://youtu.be/XwAMLy6ghDA" target="_blank">Watch on YouTube</a>
+                </div>
+            </div>
+            
+            <!-- Project 9 -->
+            <div class="card sparkle-border">
+              <div class="project-media">
+                <img src="assets/iosappvault1.png" alt="iOS App Vault Screenshot" class="vault-img" style="width: 100%; height: 180px; object-fit: cover;">
+                <h3>iOS App Ideas Vault</h3>
+                <p>Browser-based app that lets you create, rate, and track iOS app ideas. No backend needed. Powered by localStorage.</p>
+                <a href="iOSappIdeaVault.html" target="_blank">Try it Live</a>
+                <a href="https://github.com/lsikes0707/iOS-App-Idea-Vault" target="_blank">View on GitHub</a>
+              </div>
+            </div>
+            
+            <script>
+              const vaultImages = [
+                "assets/iosappvault1.png",
+                "assets/iosappvault2.png"
+              ];
+              let vaultIndex = 0;
+              const vaultImgTag = document.querySelector('.vault-img');
+            
+              setInterval(() => {
+                vaultIndex = (vaultIndex + 1) % vaultImages.length;
+                vaultImgTag.src = vaultImages[vaultIndex];
+              }, 3000);
+            </script>
+            
+            <!-- More Projects Here -->
+        </div>
+    </section>
+
+    <footer id="contact" class="container">
+        <h2 class="heading shimmer-slow">Contact</h2>
+        <p><a href="mailto:laceygruwell@icloud.com">Email Me</a></p>
+        <p><a href="https://www.linkedin.com/in/laceysikes" target="_blank">Connect with me on LinkedIn</a></p>
+        <p><a href="https://github.com/lsikes0707?tab=repositories" target="_blank">Check out my GitHub</a></p>
+        <p><a href="https://lailaisgames.itch.io/" target="_blank">Check out my itch.io</a></p>
+    </footer>
+</body>
+</html>
