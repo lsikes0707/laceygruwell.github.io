@@ -3,156 +3,1245 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Lacey Gruwell â€” Quality Engineer, QA Analyst, Computer Science graduate, and software/game developer.">
-<title>Lacey Gruwell | Quality â€¢ Software â€¢ Games</title>
+<meta name="description" content="Lacey Gruwell — Quality Engineer, QA Analyst, Computer Science graduate, and software/game developer.">
+<title>Lacey Gruwell | Quality • Software • Games</title>
+
 <style>
-:root{
-  --bg:#0d1020; --panel:#151a2f; --panel2:#101426; --text:#f7f7fb;
-  --muted:#aeb7d0; --accent:#ff79c6; --accent2:#7dd3fc; --line:#2a3152;
-  --good:#86efac; --max:1100px;
+:root {
+  --bg:#0d1020;
+  --panel:#151a2f;
+  --panel2:#101426;
+  --text:#f7f7fb;
+  --muted:#aeb7d0;
+  --accent:#ff79c6;
+  --accent2:#7dd3fc;
+  --line:#2a3152;
+  --good:#86efac;
+  --max:1100px;
 }
-*{box-sizing:border-box} html{scroll-behavior:smooth}
-body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:
-radial-gradient(circle at 15% 0%,#20264b 0,transparent 32%),var(--bg);color:var(--text)}
-a{color:inherit}.wrap{width:min(var(--max),calc(100% - 36px));margin:auto}
-nav{position:sticky;top:0;z-index:20;background:#0d1020dd;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:66px}
-.brand{font-weight:800;text-decoration:none}.navlinks{display:flex;gap:18px;flex-wrap:wrap}
-.navlinks a{color:var(--muted);text-decoration:none;font-size:.93rem}.navlinks a:hover{color:white}
-.hero{padding:92px 0 64px}.eyebrow{color:var(--accent2);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem}
-h1{font-size:clamp(3rem,8vw,6.4rem);line-height:.94;margin:.12em 0 .22em;letter-spacing:-.055em}
-.hero h2{font-size:clamp(1.15rem,3vw,1.65rem);font-weight:500;color:var(--muted);max-width:760px}
-.hero p{max-width:760px;color:#d6daea;font-size:1.08rem}
-.actions,.linkgrid{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border:1px solid var(--line);border-radius:999px;text-decoration:none;background:#151a2f}
-.btn:hover{border-color:var(--accent2);transform:translateY(-1px)}
-.btn.primary{background:var(--text);color:#111426;border-color:var(--text);font-weight:750}
-section{padding:64px 0;border-top:1px solid var(--line)}
-.sectionhead{display:grid;grid-template-columns:180px 1fr;gap:30px;margin-bottom:32px}
-.sectionhead h2{margin:0;font-size:1rem;text-transform:uppercase;letter-spacing:.13em;color:var(--accent2)}
-.sectionhead p{margin:0;color:var(--muted);max-width:760px}
-.timeline{display:grid;gap:16px}.card{background:linear-gradient(145deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;padding:24px}
-.card h3{margin:0 0 4px;font-size:1.25rem}.meta{color:var(--accent2);font-size:.93rem}.card p{color:#d5d9e7;margin-bottom:0}
-.card ul{color:#d5d9e7;margin-bottom:0}.skills{display:flex;flex-wrap:wrap;gap:9px}
-.skill{padding:8px 12px;border:1px solid var(--line);border-radius:999px;color:#dce1f2;background:#12172a}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}.edu strong{display:block;font-size:1.08rem}.edu span{color:var(--muted)}
-.archive-zone{text-align:center;padding:78px 20px;background:radial-gradient(circle,#171d39 0,transparent 64%);border-radius:24px}
-.chest{font-size:4.4rem;background:none;border:0;cursor:pointer;filter:drop-shadow(0 10px 18px #0008);transition:.2s}.chest:hover{transform:translateY(-5px) rotate(-2deg)}
-.archive-zone h3{margin:.2em 0}.archive-zone p{color:var(--muted);max-width:620px;margin:8px auto}
-.unlock{display:none;margin:25px auto 0;max-width:680px}.unlock.show{display:block}
-.sequence{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:18px 0}
-.seq{border:1px solid var(--line);background:#101426;color:white;padding:11px 18px;border-radius:12px;cursor:pointer;font-weight:700}
-.seq:hover{border-color:var(--accent)}.status{min-height:28px;color:var(--accent2);font-family:ui-monospace,monospace}
-#archive{display:none;text-align:left;margin-top:32px}#archive.open{display:block;animation:rise .5s ease}
-@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-.unlocked{color:var(--good);font:700 .9rem ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em}
-.project-links .card{min-height:160px}.project-links a{text-decoration:none}.project-links .card:hover{border-color:var(--accent2)}
-.contactbox{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-footer{padding:40px 0;color:var(--muted);font-size:.9rem}
-.note{font-size:.86rem;color:var(--muted)}
-@media(max-width:720px){.navlinks{display:none}.hero{padding-top:64px}.sectionhead{grid-template-columns:1fr;gap:8px}.two{grid-template-columns:1fr}section{padding:48px 0}}
+
+* {
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  margin:0;
+  font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  background:
+    radial-gradient(circle at 15% 0%,#20264b 0,transparent 32%),
+    var(--bg);
+  color:var(--text);
+}
+
+a {
+  color:inherit;
+}
+
+.wrap {
+  width:min(var(--max),calc(100% - 36px));
+  margin:auto;
+}
+
+/* NAVIGATION */
+
+nav {
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:#0d1020dd;
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  min-height:66px;
+}
+
+.brand {
+  font-weight:800;
+  text-decoration:none;
+}
+
+.navlinks {
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.navlinks a {
+  color:var(--muted);
+  text-decoration:none;
+  font-size:.93rem;
+}
+
+.navlinks a:hover {
+  color:white;
+}
+
+/* HERO */
+
+.hero {
+  padding:92px 0 64px;
+}
+
+.eyebrow {
+  color:var(--accent2);
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-size:.78rem;
+}
+
+h1 {
+  font-size:clamp(3rem,8vw,6.4rem);
+  line-height:.94;
+  margin:.12em 0 .22em;
+  letter-spacing:-.055em;
+}
+
+.hero h2 {
+  font-size:clamp(1.15rem,3vw,1.65rem);
+  font-weight:500;
+  color:var(--muted);
+  max-width:760px;
+}
+
+.hero p {
+  max-width:760px;
+  color:#d6daea;
+  font-size:1.08rem;
+}
+
+/* BUTTONS */
+
+.actions,
+.linkgrid {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:26px;
+}
+
+.btn {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:11px 16px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  text-decoration:none;
+  background:#151a2f;
+}
+
+.btn:hover {
+  border-color:var(--accent2);
+  transform:translateY(-1px);
+}
+
+.btn.primary {
+  background:var(--text);
+  color:#111426;
+  border-color:var(--text);
+  font-weight:750;
+}
+
+/* SECTIONS */
+
+section {
+  padding:64px 0;
+  border-top:1px solid var(--line);
+}
+
+.sectionhead {
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:30px;
+  margin-bottom:32px;
+}
+
+.sectionhead h2 {
+  margin:0;
+  font-size:1rem;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  color:var(--accent2);
+}
+
+.sectionhead p {
+  margin:0;
+  color:var(--muted);
+  max-width:760px;
+}
+
+/* CARDS */
+
+.timeline {
+  display:grid;
+  gap:16px;
+}
+
+.card {
+  background:linear-gradient(145deg,var(--panel),var(--panel2));
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:24px;
+}
+
+.card h3 {
+  margin:0 0 4px;
+  font-size:1.25rem;
+}
+
+.meta {
+  color:var(--accent2);
+  font-size:.93rem;
+}
+
+.card p {
+  color:#d5d9e7;
+  margin-bottom:0;
+}
+
+.card ul {
+  color:#d5d9e7;
+  margin-bottom:0;
+}
+
+/* SKILLS */
+
+.skills {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+
+.skill {
+  padding:8px 12px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  color:#dce1f2;
+  background:#12172a;
+}
+
+/* TWO-COLUMN LAYOUT */
+
+.two {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+.edu strong {
+  display:block;
+  font-size:1.08rem;
+}
+
+.edu span {
+  color:var(--muted);
+}
+
+/* HIDDEN EXPERIENCE ARCHIVE */
+
+.archive-zone {
+  text-align:center;
+  padding:78px 20px;
+  background:
+    radial-gradient(circle,#171d39 0,transparent 64%);
+  border-radius:24px;
+}
+
+.chest {
+  font-size:4.4rem;
+  background:none;
+  border:0;
+  cursor:pointer;
+  filter:drop-shadow(0 10px 18px #0008);
+  transition:.2s;
+}
+
+.chest:hover {
+  transform:translateY(-5px) rotate(-2deg);
+}
+
+.archive-zone h3 {
+  margin:.2em 0;
+}
+
+.archive-zone p {
+  color:var(--muted);
+  max-width:620px;
+  margin:8px auto;
+}
+
+.unlock {
+  display:none;
+  margin:25px auto 0;
+  max-width:680px;
+}
+
+.unlock.show {
+  display:block;
+}
+
+.sequence {
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin:18px 0;
+}
+
+.seq {
+  border:1px solid var(--line);
+  background:#101426;
+  color:white;
+  padding:11px 18px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.seq:hover {
+  border-color:var(--accent);
+}
+
+.status {
+  min-height:28px;
+  color:var(--accent2);
+  font-family:ui-monospace,monospace;
+}
+
+#archive {
+  display:none;
+  text-align:left;
+  margin-top:32px;
+}
+
+#archive.open {
+  display:block;
+  animation:rise .5s ease;
+}
+
+@keyframes rise {
+  from {
+    opacity:0;
+    transform:translateY(12px);
+  }
+
+  to {
+    opacity:1;
+    transform:none;
+  }
+}
+
+.unlocked {
+  color:var(--good);
+  font:700 .9rem ui-monospace,monospace;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+/* PROJECT LINKS */
+
+.project-links .card {
+  min-height:160px;
+}
+
+.project-links a {
+  text-decoration:none;
+}
+
+.project-links .card:hover {
+  border-color:var(--accent2);
+}
+
+/* CONTACT */
+
+.contactbox {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+footer {
+  padding:40px 0;
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+.note {
+  font-size:.86rem;
+  color:var(--muted);
+}
+
+/* MOBILE */
+
+@media(max-width:720px) {
+
+  .navlinks {
+    display:none;
+  }
+
+  .hero {
+    padding-top:64px;
+  }
+
+  .sectionhead {
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .two {
+    grid-template-columns:1fr;
+  }
+
+  section {
+    padding:48px 0;
+  }
+}
 </style>
 </head>
-<body>
-<nav><div class="wrap nav"><a class="brand" href="#top">LG.</a><div class="navlinks">
-<a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
-</div></div></nav>
 
-<header class="hero" id="top"><div class="wrap">
-<div class="eyebrow">Quality â€¢ Software â€¢ Games</div>
-<h1>Lacey<br>Gruwell.</h1>
-<h2>Quality Engineer & QA Analyst Â· B.S. Computer Science Â· ISTQB CTFL</h2>
-<p>I build, test, break, investigate, document, and improve software. My professional background is rooted in software quality, with hands-on experience in manual and regression testing, test automation, defect investigation, release validation, and software development.</p>
-<div class="actions">
-<a class="btn primary" href="#experience">Explore my work â†“</a>
-<a class="btn" href="https://github.com/lsikes0707?tab=repositories" target="_blank" rel="noopener">GitHub â†—</a>
-<a class="btn" href="https://www.linkedin.com/in/laceysikes" target="_blank" rel="noopener">LinkedIn â†—</a>
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+<div class="wrap nav">
+
+<a class="brand" href="#top">LG.</a>
+
+<div class="navlinks">
+<a href="#experience">Experience</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#education">Education</a>
+<a href="#contact">Contact</a>
 </div>
-</div></header>
+
+</div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero" id="top">
+
+<div class="wrap">
+
+<div class="eyebrow">
+Quality • Software • Games
+</div>
+
+<h1>
+Lacey<br>
+Gruwell.
+</h1>
+
+<h2>
+Quality Engineer & QA Analyst · B.S. Computer Science · ISTQB CTFL
+</h2>
+
+<p>
+I build, test, break, investigate, document, and improve software.
+My professional background is rooted in software quality, with
+hands-on experience in manual and regression testing, test automation,
+defect investigation, release validation, and software development.
+</p>
+
+<div class="actions">
+
+<a class="btn primary" href="#experience">
+Explore my work ↓
+</a>
+
+<a
+class="btn"
+href="https://github.com/lsikes0707?tab=repositories"
+target="_blank"
+rel="noopener">
+GitHub ↗
+</a>
+
+<a
+class="btn"
+href="https://www.linkedin.com/in/laceysikes"
+target="_blank"
+rel="noopener">
+LinkedIn ↗
+</a>
+
+</div>
+</div>
+</header>
+
 
 <main>
-<section id="experience"><div class="wrap">
-<div class="sectionhead"><h2>Technical Experience</h2><p>The career story I want you to see first: software quality, development, testing, documentation, and helping people use technology successfully.</p></div>
+
+
+<!-- TECHNICAL EXPERIENCE -->
+
+<section id="experience">
+
+<div class="wrap">
+
+<div class="sectionhead">
+
+<h2>Technical Experience</h2>
+
+<p>
+The career story I want you to see first: software quality,
+development, testing, documentation, and helping people use
+technology successfully.
+</p>
+
+</div>
+
+
 <div class="timeline">
-<article class="card"><h3>Software Application Tester</h3><div class="meta">Tapestry Solutions Â· Aug 2021 â€“ Aug 2024</div>
-<ul><li>Built and maintained automated test suites using JavaScript and TestComplete for regression testing and release validation.</li><li>Led test planning and execution for large releases, partnering with developers and product teams on test cases and acceptance criteria.</li><li>Developed and executed manual and automated tests; documented defects, risks, and reproduction steps in Jira.</li><li>Used JQL dashboards and reports to surface defect trends and release readiness; mentored junior testers and contributed to stronger team workflows.</li></ul></article>
-<article class="card"><h3>Quality Assurance Analyst Contractor</h3><div class="meta">The House of Staunton, Inc. Â· Jun 2020 â€“ Sep 2020</div>
-<p>Created documentation, manually checked product across platforms, and collaborated remotely using tools including Slack, Jira, Windows, Linux, iOS, Android, Confluence, and Google productivity tools.</p></article>
-<article class="card"><h3>Jr. Software Engineer</h3><div class="meta">Private DoD Company Â· May 2018 â€“ Dec 2019</div>
-<ul><li>Wrote Python scripts to parse and extract information from XML files and support data validation.</li><li>Performed system testing, installation/reinstallation cycles, debugging, and validation in a waterfall environment.</li><li>Worked with Red Hat/CentOS systems and SVN while troubleshooting software and system issues.</li></ul></article>
-<article class="card"><h3>Technology Associate Aide</h3><div class="meta">Harloe Elementary School Â· May 2019 â€“ Jun 2019</div>
-<p>Supported kindergarten students one-on-one and in small groups as they transitioned to computer systems, while creating supporting documentation.</p></article>
-</div></div></section>
 
-<section id="skills"><div class="wrap">
-<div class="sectionhead"><h2>Technical Skills</h2><p>A practical mix of professional QA tools and technologies used through work, education, and personal development.</p></div>
+
+<article class="card">
+
+<h3>Software Application Tester</h3>
+
+<div class="meta">
+Tapestry Solutions · Aug 2021 – Aug 2024
+</div>
+
+<ul>
+
+<li>
+Built and maintained automated test suites using JavaScript and
+TestComplete for regression testing and release validation.
+</li>
+
+<li>
+Led test planning and execution for large releases, partnering
+with developers and product teams on test cases and acceptance criteria.
+</li>
+
+<li>
+Developed and executed manual and automated tests; documented
+defects, risks, and reproduction steps in Jira.
+</li>
+
+<li>
+Used JQL dashboards and reports to surface defect trends and
+release readiness; mentored junior testers and contributed to
+stronger team workflows.
+</li>
+
+</ul>
+
+</article>
+
+
+<article class="card">
+
+<h3>Quality Assurance Analyst Contractor</h3>
+
+<div class="meta">
+The House of Staunton, Inc. · Jun 2020 – Sep 2020
+</div>
+
+<p>
+Created documentation, manually checked product across platforms,
+and collaborated remotely using tools including Slack, Jira,
+Windows, Linux, iOS, Android, Confluence, and Google productivity tools.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<h3>Jr. Software Engineer</h3>
+
+<div class="meta">
+Private DoD Company · May 2018 – Dec 2019
+</div>
+
+<ul>
+
+<li>
+Wrote Python scripts to parse and extract information from XML files
+and support data validation.
+</li>
+
+<li>
+Performed system testing, installation/reinstallation cycles,
+debugging, and validation in a waterfall environment.
+</li>
+
+<li>
+Worked with Red Hat/CentOS systems and SVN while troubleshooting
+software and system issues.
+</li>
+
+</ul>
+
+</article>
+
+
+<article class="card">
+
+<h3>Technology Associate Aide</h3>
+
+<div class="meta">
+Harloe Elementary School · May 2019 – Jun 2019
+</div>
+
+<p>
+Supported kindergarten students one-on-one and in small groups as
+they transitioned to computer systems, while creating supporting
+documentation.
+</p>
+
+</article>
+
+
+</div>
+</div>
+</section>
+
+
+<!-- TECHNICAL SKILLS -->
+
+<section id="skills">
+
+<div class="wrap">
+
+<div class="sectionhead">
+
+<h2>Technical Skills</h2>
+
+<p>
+A practical mix of professional QA tools and technologies used
+through work, education, and personal development.
+</p>
+
+</div>
+
+
 <div class="skills">
-<span class="skill">Manual Testing</span><span class="skill">Regression Testing</span><span class="skill">Exploratory Testing</span><span class="skill">Test Planning</span><span class="skill">Defect Management</span><span class="skill">Jira / JQL</span><span class="skill">TestComplete</span><span class="skill">TestExecute</span><span class="skill">Jenkins</span><span class="skill">JavaScript</span><span class="skill">Python</span><span class="skill">C++</span><span class="skill">SQL</span><span class="skill">XML</span><span class="skill">Linux</span><span class="skill">Windows</span><span class="skill">SVN</span><span class="skill">Git / GitHub</span><span class="skill">Unreal Engine</span><span class="skill">Software Development</span><span class="skill">Agile & Waterfall</span>
-</div></div></section>
 
-<section id="projects"><div class="wrap">
-<div class="sectionhead"><h2>Explore More</h2><p>My projects are more comprehensive on GitHub, so this profile points to the places where you can actually see the work.</p></div>
+<span class="skill">Manual Testing</span>
+<span class="skill">Regression Testing</span>
+<span class="skill">Exploratory Testing</span>
+<span class="skill">Test Planning</span>
+<span class="skill">Defect Management</span>
+<span class="skill">Jira / JQL</span>
+<span class="skill">TestComplete</span>
+<span class="skill">TestExecute</span>
+<span class="skill">Jenkins</span>
+<span class="skill">JavaScript</span>
+<span class="skill">Python</span>
+<span class="skill">C++</span>
+<span class="skill">SQL</span>
+<span class="skill">XML</span>
+<span class="skill">Linux</span>
+<span class="skill">Windows</span>
+<span class="skill">SVN</span>
+<span class="skill">Git / GitHub</span>
+<span class="skill">Unreal Engine</span>
+<span class="skill">Software Development</span>
+<span class="skill">Agile & Waterfall</span>
+
+</div>
+</div>
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="wrap">
+
+<div class="sectionhead">
+
+<h2>Explore More</h2>
+
+<p>
+My projects are more comprehensive on GitHub, so this profile points
+to the places where you can actually see the work.
+</p>
+
+</div>
+
+
 <div class="two project-links">
-<a href="https://github.com/lsikes0707?tab=repositories" target="_blank" rel="noopener"><article class="card"><div class="eyebrow">Code</div><h3>GitHub Repositories â†’</h3><p>Software, QA, web, coursework, and game-development repositories.</p></article></a>
-<a href="gamdev/" target="_self"><article class="card"><div class="eyebrow">Games</div><h3>GameDev Portfolio â†’</h3><p>My dedicated game-development work and playable experiments.</p></article></a>
-<a href="https://laceysikes.weebly.com/" target="_blank" rel="noopener"><article class="card"><div class="eyebrow">Archive</div><h3>Original CSUMB Portfolio â†’</h3><p>My original Computer Science school portfolio, coursework, and early projects.</p></article></a>
-<a href="https://www.youtube.com/@LaceyLC" target="_blank" rel="noopener"><article class="card"><div class="eyebrow">Video</div><h3>YouTube â†’</h3><p>Video demonstrations and project clips.</p></article></a>
-</div></div></section>
 
-<section id="education"><div class="wrap">
-<div class="sectionhead"><h2>Education & Certification</h2><p>Formal computer-science education backed by a current software-testing credential.</p></div>
+
+<a
+href="https://github.com/lsikes0707?tab=repositories"
+target="_blank"
+rel="noopener">
+
+<article class="card">
+
+<div class="eyebrow">Code</div>
+
+<h3>GitHub Repositories →</h3>
+
+<p>
+Software, QA, web, coursework, and game-development repositories.
+</p>
+
+</article>
+
+</a>
+
+
+<a href="gamdev/">
+
+<article class="card">
+
+<div class="eyebrow">Games</div>
+
+<h3>GameDev Portfolio →</h3>
+
+<p>
+My dedicated game-development work and playable experiments.
+</p>
+
+</article>
+
+</a>
+
+
+<a
+href="https://laceysikes.weebly.com/"
+target="_blank"
+rel="noopener">
+
+<article class="card">
+
+<div class="eyebrow">Archive</div>
+
+<h3>Original CSUMB Portfolio →</h3>
+
+<p>
+My original Computer Science school portfolio, coursework,
+and early projects.
+</p>
+
+</article>
+
+</a>
+
+
+<a
+href="https://www.youtube.com/@LaceyLC"
+target="_blank"
+rel="noopener">
+
+<article class="card">
+
+<div class="eyebrow">Video</div>
+
+<h3>YouTube →</h3>
+
+<p>
+Video demonstrations and project clips.
+</p>
+
+</article>
+
+</a>
+
+
+</div>
+</div>
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+<div class="wrap">
+
+<div class="sectionhead">
+
+<h2>Education & Certification</h2>
+
+<p>
+Formal computer-science education backed by a current
+software-testing credential.
+</p>
+
+</div>
+
+
 <div class="two">
-<div class="card edu"><strong>B.S. Computer Science</strong><span>California State University, Monterey Bay Â· 2019</span></div>
-<div class="card edu"><strong>A.A. Liberal Arts â€” Math & Science</strong><span>Cuesta College Â· 2015</span></div>
-<div class="card edu"><strong>ISTQB Certified Tester Foundation Level (CTFL)</strong><span>ISTQB / ASTQB Â· July 2025</span></div>
-</div></div></section>
 
-<section><div class="wrap">
+
+<div class="card edu">
+
+<strong>
+B.S. Computer Science
+</strong>
+
+<span>
+California State University, Monterey Bay · 2019
+</span>
+
+</div>
+
+
+<div class="card edu">
+
+<strong>
+A.A. Liberal Arts — Math & Science
+</strong>
+
+<span>
+Cuesta College · 2015
+</span>
+
+</div>
+
+
+<div class="card edu">
+
+<strong>
+ISTQB Certified Tester Foundation Level (CTFL)
+</strong>
+
+<span>
+ISTQB / ASTQB · July 2025
+</span>
+
+</div>
+
+
+</div>
+</div>
+</section>
+
+
+<!-- HIDDEN CAREER ARCHIVE -->
+
+<section>
+
+<div class="wrap">
+
 <div class="archive-zone">
-<button class="chest" id="chest" aria-label="Open hidden experience archive">ðŸ—ƒï¸</button>
-<div class="eyebrow">Experience Archive Â· Locked</div>
-<h3>Thereâ€™s more to a career than the rÃ©sumÃ© headline.</h3>
-<p>My technical work is only part of the story. Curious? Unlock the archive. Hint: itâ€™s also how I approach unfamiliar problems.</p>
-<div class="unlock" id="unlock">
-<div class="sequence"><button class="seq" data-step="1">LEARN</button><button class="seq" data-step="0">TEST</button><button class="seq" data-step="2">BUILD</button></div>
-<div class="status" id="status">Sequence: _ â†’ _ â†’ _</div>
-</div>
-<div id="archive">
-<div class="unlocked">âœ“ Achievement unlocked: There was more before tech</div>
-<div class="two" style="margin-top:18px">
-<article class="card"><h3>Research Assistant</h3><div class="meta">Cal Poly Corporation Â· Jun 2017 â€“ May 2018</div><p>Collected raw data, transcribed research data into detailed spreadsheets, and collaborated with a research team. Built habits around accuracy, documentation, repeatable processes, and careful handling of information.</p></article>
-<article class="card"><h3>Swim Instruction</h3><div class="meta">Teaching â€¢ Safety â€¢ Adaptability</div><p>Experience teaching skills clearly, adjusting instruction to the learner, maintaining safety awareness, and building confidence through patient, practical coaching.</p></article>
-<article class="card"><h3>Miner's Ace Hardware</h3><div class="meta">Customer Service â€¢ Retail Operations â€¢ Problem Solving</div><p>Customer-facing experience requiring communication, product learning, practical problem solving, reliability, and the ability to help people find workable solutions.</p></article>
-<article class="card"><h3>The skills underneath the titles</h3><div class="skills"><span class="skill">Research</span><span class="skill">Data Accuracy</span><span class="skill">Documentation</span><span class="skill">Teaching</span><span class="skill">Safety Awareness</span><span class="skill">Customer Service</span><span class="skill">Communication</span><span class="skill">Adaptability</span><span class="skill">Teamwork</span><span class="skill">Problem Solving</span></div></article>
-</div>
-<p class="note">This archive is intentionally separate from the primary technical profile: additional experience, not filler.</p>
-</div>
-</div></div></section>
 
-<section id="contact"><div class="wrap">
-<div class="contactbox"><div><div class="eyebrow">Contact</div><h2 style="font-size:clamp(2rem,5vw,3.7rem);margin:.1em 0">Want to talk?</h2><p style="color:var(--muted)">The email address is assembled only when you click, so it isn't printed in the page source as one obvious address.</p></div>
-<button class="btn primary" id="emailBtn" style="cursor:pointer;font-size:1rem">Email me â†—</button></div>
-<div class="linkgrid"><a class="btn" href="https://www.linkedin.com/in/laceysikes" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/lsikes0707?tab=repositories" target="_blank" rel="noopener">GitHub</a><a class="btn" href="gamdev/">GameDev</a><a class="btn" href="https://laceysikes.weebly.com/" target="_blank" rel="noopener">CSUMB Archive</a><a class="btn" href="https://www.youtube.com/@LaceyLC" target="_blank" rel="noopener">YouTube</a></div>
-</div></section>
+
+<button
+class="chest"
+id="chest"
+aria-label="Open hidden experience archive">
+🗃️
+</button>
+
+
+<div class="eyebrow">
+Experience Archive · Locked
+</div>
+
+
+<h3>
+There’s more to a career than the résumé headline.
+</h3>
+
+
+<p>
+My technical work is only part of the story.
+Curious? Unlock the archive.
+Hint: it’s also how I approach unfamiliar problems.
+</p>
+
+
+<div class="unlock" id="unlock">
+
+
+<div class="sequence">
+
+<button class="seq" data-step="1">
+LEARN
+</button>
+
+<button class="seq" data-step="0">
+TEST
+</button>
+
+<button class="seq" data-step="2">
+BUILD
+</button>
+
+</div>
+
+
+<div class="status" id="status">
+Sequence: _ → _ → _
+</div>
+
+
+</div>
+
+
+<!-- HIDDEN CONTENT -->
+
+<div id="archive">
+
+
+<div class="unlocked">
+✓ Achievement unlocked: There was more before tech
+</div>
+
+
+<div class="two" style="margin-top:18px">
+
+
+<article class="card">
+
+<h3>Research Assistant</h3>
+
+<div class="meta">
+Cal Poly Corporation · Jun 2017 – May 2018
+</div>
+
+<p>
+Collected raw data, transcribed research data into detailed
+spreadsheets, and collaborated with a research team.
+
+Built habits around accuracy, documentation, repeatable processes,
+and careful handling of information.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<h3>Swim Instruction</h3>
+
+<div class="meta">
+Teaching • Safety • Adaptability
+</div>
+
+<p>
+Experience teaching skills clearly, adjusting instruction to the
+learner, maintaining safety awareness, and building confidence
+through patient, practical coaching.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<h3>Miner's Ace Hardware</h3>
+
+<div class="meta">
+Customer Service • Retail Operations • Problem Solving
+</div>
+
+<p>
+Customer-facing experience requiring communication, product
+learning, practical problem solving, reliability, and the ability
+to help people find workable solutions.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<h3>
+The skills underneath the titles
+</h3>
+
+
+<div class="skills">
+
+<span class="skill">Research</span>
+<span class="skill">Data Accuracy</span>
+<span class="skill">Documentation</span>
+<span class="skill">Teaching</span>
+<span class="skill">Safety Awareness</span>
+<span class="skill">Customer Service</span>
+<span class="skill">Communication</span>
+<span class="skill">Adaptability</span>
+<span class="skill">Teamwork</span>
+<span class="skill">Problem Solving</span>
+
+</div>
+
+</article>
+
+
+</div>
+
+
+<p class="note">
+This archive is intentionally separate from the primary technical
+profile: additional experience, not filler.
+</p>
+
+
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="wrap">
+
+
+<div class="contactbox">
+
+
+<div>
+
+<div class="eyebrow">
+Contact
+</div>
+
+<h2 style="
+font-size:clamp(2rem,5vw,3.7rem);
+margin:.1em 0;
+">
+Want to talk?
+</h2>
+
+<p style="color:var(--muted)">
+The email address is assembled only when you click, so it isn't
+printed in the page source as one obvious address.
+</p>
+
+</div>
+
+
+<button
+class="btn primary"
+id="emailBtn"
+style="cursor:pointer;font-size:1rem">
+Email me ↗
+</button>
+
+
+</div>
+
+
+<div class="linkgrid">
+
+
+<a
+class="btn"
+href="https://www.linkedin.com/in/laceysikes"
+target="_blank"
+rel="noopener">
+LinkedIn
+</a>
+
+
+<a
+class="btn"
+href="https://github.com/lsikes0707?tab=repositories"
+target="_blank"
+rel="noopener">
+GitHub
+</a>
+
+
+<a
+class="btn"
+href="gamdev/">
+GameDev
+</a>
+
+
+<a
+class="btn"
+href="https://laceysikes.weebly.com/"
+target="_blank"
+rel="noopener">
+CSUMB Archive
+</a>
+
+
+<a
+class="btn"
+href="https://www.youtube.com/@LaceyLC"
+target="_blank"
+rel="noopener">
+YouTube
+</a>
+
+
+</div>
+
+</div>
+</section>
+
+
 </main>
 
-<footer><div class="wrap">Â© <span id="year"></span> Lacey Gruwell Â· Built as a personal profile, not a social feed.</div></footer>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="wrap">
+
+© <span id="year"></span>
+Lacey Gruwell · Built as a personal profile, not a social feed.
+
+</div>
+
+</footer>
+
 
 <script>
-document.getElementById('year').textContent=new Date().getFullYear();
-const chest=document.getElementById('chest'), unlock=document.getElementById('unlock'), status=document.getElementById('status'), archive=document.getElementById('archive');
-chest.addEventListener('click',()=>unlock.classList.toggle('show'));
-let progress=0; const wanted=[0,1,2], words=['TEST','LEARN','BUILD'];
-document.querySelectorAll('.seq').forEach(b=>b.addEventListener('click',()=>{
-  const s=Number(b.dataset.step);
-  if(s===wanted[progress]){progress++; status.textContent='Sequence: '+words.slice(0,progress).join(' â†’ ') + (progress<3?' â†’ _'.repeat(3-progress):' âœ“');
-    if(progress===3){archive.classList.add('open'); unlock.style.display='none'; chest.textContent='ðŸ“‚'; archive.scrollIntoView({behavior:'smooth',block:'center'});}
-  } else {progress=0; status.textContent='Not quite. Think like QA: what comes before you learn from the result and build the next thing?';}
-}));
-document.getElementById('emailBtn').addEventListener('click',()=>{
-  const user=['lacey','gruwell'].join('');
-  const domain=['icloud','com'].join('.');
-  window.location.href='mai'+'lto:'+user+'@'+domain+'?subject='+encodeURIComponent('Portfolio inquiry');
+
+/* CURRENT YEAR */
+
+document.getElementById('year').textContent =
+  new Date().getFullYear();
+
+
+/* EXPERIENCE ARCHIVE */
+
+const chest =
+  document.getElementById('chest');
+
+const unlock =
+  document.getElementById('unlock');
+
+const status =
+  document.getElementById('status');
+
+const archive =
+  document.getElementById('archive');
+
+
+chest.addEventListener('click', () => {
+
+  unlock.classList.toggle('show');
+
 });
+
+
+let progress = 0;
+
+const wanted = [0,1,2];
+
+const words = [
+  'TEST',
+  'LEARN',
+  'BUILD'
+];
+
+
+document
+.querySelectorAll('.seq')
+.forEach(button => {
+
+  button.addEventListener('click', () => {
+
+    const step =
+      Number(button.dataset.step);
+
+
+    if (step === wanted[progress]) {
+
+      progress++;
+
+
+      status.textContent =
+        'Sequence: ' +
+        words
+          .slice(0,progress)
+          .join(' → ') +
+
+        (
+          progress < 3
+          ? ' → _'.repeat(3-progress)
+          : ' ✓'
+        );
+
+
+      if (progress === 3) {
+
+        archive.classList.add('open');
+
+        unlock.style.display = 'none';
+
+        chest.textContent = '📂';
+
+
+        archive.scrollIntoView({
+          behavior:'smooth',
+          block:'center'
+        });
+
+      }
+
+    }
+
+    else {
+
+      progress = 0;
+
+      status.textContent =
+        'Not quite. Think like QA: what comes before you learn from the result and build the next thing?';
+
+    }
+
+  });
+
+});
+
+
+/* EMAIL BUTTON
+
+The complete email address isn't written as one string
+in the HTML.
+
+*/
+
+document
+.getElementById('emailBtn')
+.addEventListener('click', () => {
+
+  const user =
+    ['lacey','gruwell'].join('');
+
+  const domain =
+    ['icloud','com'].join('.');
+
+
+  window.location.href =
+    'mai' +
+    'lto:' +
+    user +
+    '@' +
+    domain +
+    '?subject=' +
+    encodeURIComponent('Portfolio inquiry');
+
+});
+
 </script>
-</body></html>
+
+</body>
+</html>
